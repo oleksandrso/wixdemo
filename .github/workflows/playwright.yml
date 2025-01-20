@@ -28,6 +28,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # Install Playwright browsers
+      - name: Install Playwright browsers
+        run: npx playwright install
+
       # Run Playwright tests
       - name: Run Playwright tests
         run: npx playwright test --reporter=list
@@ -39,3 +43,4 @@ jobs:
         with:
           name: allure-results
           path: allure-results/
+
