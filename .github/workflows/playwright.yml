@@ -14,29 +14,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout code
+      # 1. Checkout the code
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Setup Node.js
+      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      # Install dependencies
+      # 3. Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # Install Playwright browsers
+      # 4. Install Playwright browsers
       - name: Install Playwright browsers
         run: npx playwright install
 
-      # Run Playwright tests
+      # 5. Run Playwright tests
       - name: Run Playwright tests
         run: npx playwright test --reporter=list
 
-      # Upload Allure results
+      # 6. Upload Allure results
       - name: Upload Allure Results
         if: always()
         uses: actions/upload-artifact@v3
