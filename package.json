@@ -1,0 +1,13 @@
+{
+  "name": "wixdemo",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "report": "npx allure generate allure-results --clean && npx allure open"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.39.2",
+    "allure-playwright": "^2.0.0-beta.19"
+  }
+}
