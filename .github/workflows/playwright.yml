@@ -40,11 +40,15 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test --reporter=list
 
-      # 7. Generate Allure report
+      # 7. Check allure-results
+      - name: Check allure-results
+        run: ls -la allure-results || echo "allure-results folder is empty"
+
+      # 8. Generate Allure report
       - name: Generate Allure report
         run: npx allure generate allure-results --clean -o allure-report
 
-      # 8. Deploy Allure report to GitHub Pages
+      # 9. Deploy Allure report to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
