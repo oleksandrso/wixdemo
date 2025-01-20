@@ -1,0 +1,28 @@
+# Logs
+logs/
+*.log
+
+# Dependency directories
+node_modules/
+
+# Playwright and Allure results
+allure-results/
+allure-report/
+test-results/
+
+# IDE settings
+.idea/
+.vscode/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Build files
+dist/
+build/
