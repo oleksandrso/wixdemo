@@ -28,8 +28,23 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 4. Manually install Playwright browsers
+      # 4. Fix permissions for Playwright binaries
+      - name: Fix Playwright permissions
+        run: chmod +x ./node_modules/.bin/playwright
+
+      # 5. Install Playwright browsers
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
+      # 6. Run Playwright tests
+      - name: Run Playwright tests
+        run: npx playwright test --reporter=list
+
+      # 7. Upload Allure results
+      - name: Upload Allure Results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-results
+          path: allure-results/
 
